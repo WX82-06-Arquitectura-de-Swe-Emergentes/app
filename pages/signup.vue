@@ -34,7 +34,9 @@
             </div>
   
             <div>
-              <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Sign up</button>
+                    <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                        <NuxtLink to="/SuccessModal">Sign up</NuxtLink>
+                    </button> 
             </div>
           </form>
   
@@ -53,8 +55,14 @@
   
   import Public from "~/layouts/public.vue";
   import {definePageMeta} from "#imports";
-  
+  const route = useRoute()
+  console.log(route.params.id)
   definePageMeta({
     layout: false,
   })
+
+  const openRegistrationSuccess = () => {
+  //route.push('/login'); 
+};
+
   </script>
