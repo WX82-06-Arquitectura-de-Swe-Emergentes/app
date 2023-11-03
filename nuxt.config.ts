@@ -9,10 +9,15 @@ export default defineNuxtConfig({
         '@nuxtjs/tailwindcss',
         '@pinia/nuxt'
     ],
+    runtimeConfig: {
+      public: {
+            baseURL: process.env.BASE_URL || 'http://localhost:8080/api/v1'
+      }
+    },
     tailwindcss: {
         config: {
             content: [
-                './components/**/*.{vue}'
+                './components/**/*.vue'
             ],
             theme: {
                 extend: {
