@@ -9,5 +9,3 @@ type Trip = {
     thumbnail: string,
     averageRating: string
 }
-
-export default Trip;
