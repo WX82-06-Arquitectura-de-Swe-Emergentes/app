@@ -1,6 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
-import {defineNuxtConfig} from "nuxt/config";
+require('dotenv').config();
+import {defineNuxtConfig, type NuxtConfig} from "nuxt/config";
+
+
 
 export default defineNuxtConfig({
     devtools: {enabled: true},
@@ -9,6 +12,11 @@ export default defineNuxtConfig({
         '@nuxtjs/tailwindcss',
         '@pinia/nuxt'
     ],
+
+
+    
+
+
     tailwindcss: {
         config: {
             content: [
