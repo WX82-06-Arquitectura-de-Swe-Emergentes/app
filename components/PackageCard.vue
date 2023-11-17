@@ -45,7 +45,7 @@
       <!-- Columna Date -->
       <div class="text-center">
         <p class="font-semibold text-gray-600 dark:text-gray-400">Date</p>
-        <p class="text-gray-700 dark:text-gray-400">Fecha: {{ tour.start_date }} - {{ tour.end_date }}</p>
+        <p class="text-gray-700 dark:text-gray-400">{{ tour.start_date }} - {{ tour.end_date }}</p>
       </div>
     </div>
   </div>
