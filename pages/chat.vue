@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-gray-900 h-screen flex flex-col justify-between">
+    <div class="bg-gray-900 h-full flex flex-col justify-between">
       <header class="bg-gray-900 text-white p-4">
         <h1 class="text-xl font-semibold">Chat</h1>
       </header>
