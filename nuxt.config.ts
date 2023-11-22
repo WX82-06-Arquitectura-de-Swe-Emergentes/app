@@ -12,7 +12,7 @@ export default defineNuxtConfig({
     tailwindcss: {
         config: {
             content: [
-                './components/**/*.{vue}'
+                './components/**/*.vue'
             ],
             theme: {
                 extend: {
@@ -29,6 +29,11 @@ export default defineNuxtConfig({
         components: {
             include: '*',
             exclude: ['Editor', 'Chart']
+        }
+    },
+    runtimeConfig: {
+        public: {
+            apiBaseUrl: process.env.API_BASE_URL ?? 'http://localhost:8080/api/v1'
         }
     }
 })

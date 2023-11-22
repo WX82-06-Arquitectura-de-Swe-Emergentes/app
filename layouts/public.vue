@@ -59,7 +59,7 @@
       </PopoverPanel>
     </header>
   </Popover>
-  <main class="h-[calc(100vh-68px)]">
+  <main class="h-[calc(100vh-68px)] bg-background">
     <slot></slot>
   </main>
 </template>

@@ -1,5 +1,8 @@
 <script setup lang="ts">
 
+definePageMeta({
+  layout: "public"
+})
 </script>
 <template>
   <div>
@@ -9,7 +12,7 @@
         <h1 class="text-4xl font-bold mb-4 bg-black bg-opacity-50 text-white p-4">¡Bienvenido a AdventureHub!</h1>
         <p class="text-lg mb-8 bg-black bg-opacity-50 text-white p-4">Conecta con agencias de turismo y descubre
           increíbles itinerarios.</p>
-<router-link to="/login" class="bg-red-600 hover:bg-red-700 py-3 px-6 rounded-full text-2xl">REGISTRATE YA</router-link>
+        <router-link to="/register" class="bg-red-600 hover:bg-red-700 py-3 px-6 rounded-full text-2xl">REGISTRATE YA</router-link>
 
       </div>
     </section>
