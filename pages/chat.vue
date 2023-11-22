@@ -46,7 +46,7 @@
         if (this.newMessage.trim() !== '') {
           this.messages.push({
             text: this.newMessage.trim(),
-            // Aquí podrías agregar más propiedades como el remitente, la hora, etc.
+            // Aquí podrías agregar más propiedades como el remitente
           });
           this.newMessage = '';
         }
@@ -69,5 +69,5 @@
   </script>
   
   <style>
-  /* Estilos personalizados */
+ 
   </style>
