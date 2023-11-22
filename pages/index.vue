@@ -42,7 +42,7 @@
           <!-- Ejemplo 2 - Detalle de Viaje -->
           <div class="bg-gray-800 p-4 rounded-lg shadow-md">
             <h3 class="text-xl font-semibold mb-2">Descubre la Magia de los Andes Peruanos</h3>
-            <p class="mb-2">Un viaje a través de los majestuosos Andes peruanos, con caminatas en las montañas, visitas a
+            <p class="mb-2">Un grandioso viaje a través de los majestuosos Andes peruanos, con caminatas en las montañas, visitas a
               pueblos locales y la oportunidad de ver las maravillas naturales de la región.</p>
             <ul class="mb-4">
               <li>Fecha de inicio: 15 de enero</li>
@@ -82,7 +82,7 @@
       <!-- Ejemplo 1 - Chat en Línea -->
       <div class="bg-gray-800 p-4 rounded-lg shadow-md">
         <h3 class="text-xl font-semibold mb-2 text-gray-100">Chat de Asesoría de Aventuras en la Selva</h3>
-        <p class="mb-2 text-gray-400">Habla con nuestros expertos en aventuras en la selva amazónica peruana. Obtén consejos sobre rutas de senderismo, vida silvestre y más.</p>
+        <p class="mb-2 text-gray-400">Habla con nuestros expertos en aventuras en la selva amazónica peruana, y obtén consejos sobre rutas de senderismo, vida silvestre y más.</p>
         <a href="/chat-aventuras" class="bg-red-500 hover:bg-blue-600 text-white py-2 px-4 rounded-full text-lg">Iniciar Chat</a>
       </div>
 
