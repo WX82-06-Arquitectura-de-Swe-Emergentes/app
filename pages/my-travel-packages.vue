@@ -21,10 +21,6 @@
 import {definePageMeta} from "#imports";
 import PackageCard from '~/components/PackageCard.vue';
 
-definePageMeta({
-  layout: false,
-})
-
 const tours =ref([]);
 const fetchTours = async () =>{
   const {data,error} = await useFetch(`https://api.turismoi.com/api/tours?page%5Bpage%5D=1&page%5Bper_page%5D=10`, {

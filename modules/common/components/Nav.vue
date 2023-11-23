@@ -8,6 +8,7 @@ const navigation = [
   {name: 'Dashboard', href: '/', current: true},
   {name: 'Viajes', href: '/trips', current: false},
   {name: 'Chat', href: '/chat', current: false},
+  {name: 'Actividades', href: '/my-travel-packages', current: false},
 ]
 </script>
 

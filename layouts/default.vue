@@ -14,13 +14,6 @@ import {navigateTo} from "#app";
 const {session} = useAuth()
 const route = useRoute()
 
-const navigation = [
-  {name: 'Dashboard', href: '/', current: true},
-  {name: 'Viajes', href: '/trips', current: false},
-  {name: 'Projects', href: '#', current: false},
-  {name: 'Calendar', href: '#', current: false},
-]
-
 const publicRoutes = [
   '/', '/login', '/register', '/trips', '/trips/search', '/my-travel-packages'
 ]
