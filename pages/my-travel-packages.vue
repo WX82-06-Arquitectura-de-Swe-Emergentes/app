@@ -18,15 +18,15 @@
 
 
 <script setup lang="ts">
-
 import {definePageMeta} from "#imports";
 import PackageCard from '~/components/PackageCard.vue';
 
+definePageMeta({
+  layout: false,
+})
 
 const tours =ref([]);
-
 const fetchTours = async () =>{
-  console.log('test')
   const {data,error} = await useFetch(`https://api.turismoi.com/api/tours?page%5Bpage%5D=1&page%5Bper_page%5D=10`, {
     method: "GET",
     headers: {
@@ -37,56 +37,11 @@ const fetchTours = async () =>{
     }
   })
 
-
-  console.log('data.value',data?.value)
-  console.log('Response',error.value)
-
   tours.value = data?.value?.data?.map((res:any)=>res.attributes) || []
-  // if (response.ok) {
-  //   return response.json()
-  // } else {
-  //   throw new Error(response.toString())
-  // }
+
 };
 
-
-
-
-definePageMeta({
-  layout: false,
-})
-
-onMounted(() => {
-  // Llama a fetchTours cuando el componente se monta
-  console.log('Api fetcdf aasdsdsadfh')
-  fetchTours();
-});
-
-const exampleTours = ref([
-  {
-    id: '1',
-    name: 'Tour de la Ciudad',
-    description: 'Descubre los lugares más emblemáticos de la ciudad.',
-    start_date: '2023-01-01',
-    end_date: '2023-01-07',
-    price: '150',
-    rating: '4.5',
-    status: 'Cerrado',
-    image: 'https://www.lima2019.pe/sites/default/files/2019-07/iStock-458584553.jpg',
-  },
-    {
-    id: '2',
-    name: 'Tour de la Ciudad 2',
-    description: 'Descubre los lugares más emblemáticos de la ciudad 2',
-    start_date: '2023-01-01',
-    end_date: '2023-01-07',
-    price: '150',
-    rating: '4.5',
-    status: 'Cerrado',
-    image: 'https://www.lima2019.pe/sites/default/files/2019-07/iStock-458584553.jpg',
-  },
-]);
-
+fetchTours()
 
 
 </script>
