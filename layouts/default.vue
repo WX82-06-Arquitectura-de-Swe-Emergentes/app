@@ -22,7 +22,7 @@ const navigation = [
 ]
 
 const publicRoutes = [
-  '/', '/login', '/register', '/trips'
+  '/', '/login', '/register', '/trips','/my-travel-packages'
 ]
 
 if (!session.value && !publicRoutes.includes(route.path))
