@@ -16,9 +16,9 @@
 
         <div>
           <div class="flex items-center justify-between">
-            <label for="password" class="block text-sm font-medium leading-6 text-white">Password</label>
+            <label for="password" class="block text-sm font-medium leading-6 text-white">Contraseña</label>
             <div class="text-sm">
-              <a href="#" class="font-semibold text-indigo-400 hover:text-indigo-300">Forgot password?</a>
+              <a href="#" class="font-semibold text-indigo-400 hover:text-indigo-300">¿Olvidaste tu contraseña?</a>
             </div>
           </div>
           <div class="mt-2">
@@ -27,17 +27,16 @@
         </div>
 
         <div>
-          <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Sign in</button>
+          <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Iniciar sesión</button>
         </div>
       </form>
-
-      <p class="mt-10 text-center text-sm text-gray-400">
-        Not a member?
-        {{ ' ' }}
-        <a href="#" class="font-semibold leading-6 text-indigo-400 hover:text-indigo-300">Start a 14 day free trial</a>
-      </p>
+        <p class="mt-10 text-center text-sm text-gray-400">
+          ¿No eres miembro?
+          {{ ' ' }}
+          <a href="#" class="font-semibold leading-6 text-indigo-400 hover:text-indigo-300">Comienza una prueba gratuita de 14 días</a>
+        </p>
+      </div>
     </div>
-  </div>
 </template>
 
 
@@ -45,7 +44,6 @@
 
 import { ref } from 'vue';
 import {signIn} from "#auth";
-
 
 const email = ref('');
 const password = ref('');
