@@ -24,6 +24,12 @@ export default defineNuxtConfig({
                 }
             }
         }
+    },
+    primevue: {
+        components: {
+            include: '*',
+            exclude: ['Editor', 'Chart']
+        }
     }
 })
 
