@@ -6,6 +6,7 @@ const navigation = [
   {name: 'Home', href: '/', current: true},
   {name: 'Login', href: '/login', current: false},
   {name: 'Register', href: '/register', current: false},
+  {name: 'MyTravelPackages', href: '/my-travel-packages', current: false},
 ]
 </script>
 
@@ -20,7 +21,7 @@ const navigation = [
               <a href="/" class="flex items-center">
                 <img class="h-8 w-auto" src="~/assets/images/logo.png"
                      alt="Adventurehub"/>
-                AdventureHub
+                <p class="text-white">AdventureHub</p>
               </a>
             </div>
           </div>
@@ -39,7 +40,7 @@ const navigation = [
           <div class="flex items-center md:absolute md:inset-y-0 md:right-0 lg:hidden">
             <!-- Mobile menu button -->
             <PopoverButton
-                class="relative -mx-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-background hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                class=" relative -mx-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-background hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
               <span class="absolute -inset-0.5"/>
               <span class="sr-only">Open menu</span>
               <Bars3Icon v-if="!open" class="block h-6 w-6" aria-hidden="true"/>
@@ -51,9 +52,14 @@ const navigation = [
                class="ml-6 inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
               Login
             </a>
-            <a href="/signup"
+            <a href="/register"
                class="ml-6 inline-flex items-center rounded-md border border-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
               Register
+            </a>
+
+            <a href="/my-travel-packages"
+               class="ml-6 inline-flex items-center rounded-md border border-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+              Actividades!
             </a>
           </div>
         </div>
