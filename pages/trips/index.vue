@@ -7,7 +7,7 @@ const data = await TripService.getMany();
 </script>
 
 <template>
-  <p class="text-white">
+  <p class="text-black">
     {{ data }}
   </p>
 </template>

@@ -1,4 +1,4 @@
-import http from "~/modules/shared/http";
+import http from "~/modules/common/util/http";
 
 interface LoginResponse {
   token: string

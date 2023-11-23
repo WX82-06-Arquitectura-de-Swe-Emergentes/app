@@ -14,7 +14,7 @@ class HttpClient {
     return HttpClient.instance;
   }
 
-  async get(url: string, opts: any) {
+  async get(url: string, opts = {}) {
     return await $fetch(this.baseUrl + url, opts);
   }
 
