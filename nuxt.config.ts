@@ -44,6 +44,7 @@ export default defineNuxtConfig({
         },
         public: {
             apiBaseUrl: process.env.API_BASE_URL ?? 'http://localhost:8080/api/v1',
+            apiFlightsUrl: process.env.API_FLIGHTS_URL,
             authJs:{
                 baseUrl: process.env.NUXT_NEXTAUTH_URL ?? 'http://localhost:3000',
                 verifyClientOnEveryRequest: true
