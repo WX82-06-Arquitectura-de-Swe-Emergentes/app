@@ -6,7 +6,7 @@ const navigation = [
   {name: 'Home', href: '/', current: true},
   {name: 'Login', href: '/login', current: false},
   {name: 'Register', href: '/register', current: false},
-  {name: 'myTravelPackages', href: '/my-travel-packages', current: false},
+  {name: 'MyTravelPackages', href: '/my-travel-packages', current: false},
 ]
 </script>
 
@@ -40,7 +40,7 @@ const navigation = [
           <div class="flex items-center md:absolute md:inset-y-0 md:right-0 lg:hidden">
             <!-- Mobile menu button -->
             <PopoverButton
-                class="relative -mx-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-background hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                class=" relative -mx-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-background hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
               <span class="absolute -inset-0.5"/>
               <span class="sr-only">Open menu</span>
               <Bars3Icon v-if="!open" class="block h-6 w-6" aria-hidden="true"/>
