@@ -8,11 +8,4 @@ import Dashboard from "~/modules/common/components/Dashboard.vue";
 import Landing from "~/modules/common/components/Landing.vue";
 
 const {session} = useAuth()
-
-onBeforeMount(() => {
-  if (session.value === null) {
-    setPageLayout("public")
-  }
-})
-
 </script>
