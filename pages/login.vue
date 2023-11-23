@@ -7,11 +7,11 @@
       </div>
 
       <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form class="space-y-6" action="#" method="POST">
+        <form @submit.prevent="onSubmit" class="space-y-6">
           <div>
-            <label for="email" class="block text-sm font-medium leading-6 text-white">Email address</label>
+            <label for="username" class="block text-sm font-medium leading-6 text-white">Username</label>
             <div class="mt-2">
-              <input id="email" name="email" type="email" autocomplete="email" required="" class="block w-full rounded-md border-0 bg-white/5 py-1.5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6" />
+              <input v-model="email" id="email" name="email" autocomplete="email" required="" class="block w-full rounded-md border-0 bg-white/5 py-1.5 px-3 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6" />
             </div>
           </div>
 
@@ -23,7 +23,7 @@
               </div>
             </div>
             <div class="mt-2">
-              <input id="password" name="password" type="password" autocomplete="current-password" required="" class="block w-full rounded-md border-0 bg-white/5 py-1.5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6" />
+              <input v-model="password" id="password" name="password" type="password" autocomplete="current-password" required="" class="block w-full rounded-md border-0 bg-white/5 py-1.5 px-3 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6" />
             </div>
           </div>
 
@@ -47,8 +47,21 @@
 
 import Public from "~/layouts/public.vue";
 import {definePageMeta} from "#imports";
+import { ref } from 'vue';
+import {signIn} from "#auth";
 
 definePageMeta({
   layout: false,
 })
+
+const email = ref('');
+const password = ref('');
+
+const onSubmit = async () => {
+  await signIn("credentials", {
+    email: email.value,
+    password: password.value,
+    callbackUrl: "/"
+  })
+};
 </script>

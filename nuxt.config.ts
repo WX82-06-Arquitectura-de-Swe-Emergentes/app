@@ -18,7 +18,8 @@ export default defineNuxtConfig({
     tailwindcss: {
         config: {
             content: [
-                './components/**/*.vue'
+                './pages/**/*.vue',
+                './modules/**/components/**/*.vue',
             ],
             theme: {
                 extend: {

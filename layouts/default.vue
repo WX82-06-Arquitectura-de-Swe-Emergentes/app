@@ -51,17 +51,18 @@
                         leave-from-class="transform opacity-100 scale-100"
                         leave-to-class="transform opacity-0 scale-95">
               <MenuItems
-                  class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                  class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-primary py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                 <MenuItem v-slot="{ active }">
-                  <a href="#" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">Your
-                    Profile</a>
+                  <a href="#" :class="[active ? 'bg-gray-700' : '', 'block px-4 py-2 text-sm text-gray-300']">
+                    Your Profile
+                  </a>
                 </MenuItem>
                 <MenuItem v-slot="{ active }">
                   <a href="#"
-                     :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">Settings</a>
+                     :class="[active ? 'bg-gray-700' : '', 'block px-4 py-2 text-sm text-gray-300']">Settings</a>
                 </MenuItem>
-                <MenuItem v-slot="{ active }">
-                  <a href="#" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">Sign
+                <MenuItem v-slot="{ active }" @click="signOut()">
+                  <a href="#" :class="[active ? 'bg-gray-700' : '', 'block px-4 py-2 text-sm text-gray-300']">Sign
                     out</a>
                 </MenuItem>
               </MenuItems>
@@ -90,9 +91,11 @@
 import {Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems} from '@headlessui/vue'
 import {Bars3Icon, BellIcon, XMarkIcon} from '@heroicons/vue/24/outline'
 
+const { signOut } = useAuth()
+
 const navigation = [
-  {name: 'Dashboard', href: '#', current: true},
-  {name: 'Team', href: '#', current: false},
+  {name: 'Dashboard', href: '/', current: true},
+  {name: 'Viajes', href: '/trips', current: false},
   {name: 'Projects', href: '#', current: false},
   {name: 'Calendar', href: '#', current: false},
 ]
