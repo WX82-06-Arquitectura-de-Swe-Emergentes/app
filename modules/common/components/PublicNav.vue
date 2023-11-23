@@ -6,6 +6,7 @@ const navigation = [
   {name: 'Home', href: '/', current: true},
   {name: 'Login', href: '/login', current: false},
   {name: 'Register', href: '/register', current: false},
+  {name: 'myTravelPackages', href: '/my-travel-packages', current: false},
 ]
 </script>
 
@@ -20,7 +21,7 @@ const navigation = [
               <a href="/" class="flex items-center">
                 <img class="h-8 w-auto" src="~/assets/images/logo.png"
                      alt="Adventurehub"/>
-                AdventureHub
+                <p class="text-white">AdventureHub</p>
               </a>
             </div>
           </div>
@@ -51,9 +52,14 @@ const navigation = [
                class="ml-6 inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
               Login
             </a>
-            <a href="/signup"
+            <a href="/register"
                class="ml-6 inline-flex items-center rounded-md border border-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
               Register
+            </a>
+
+            <a href="/my-travel-packages"
+               class="ml-6 inline-flex items-center rounded-md border border-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+              Actividades!
             </a>
           </div>
         </div>
