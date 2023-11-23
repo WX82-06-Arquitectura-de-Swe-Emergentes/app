@@ -20,7 +20,7 @@
 
         <p class="text-lg text-center text-gray-400 mb-4">
           Nuestro bot de inteligencia artificial está aquí para ayudarte a planificar tu próximo viaje de manera
-          personalizada. Puedes obtener recomendaciones de destinos, itinerarios y más, todo adaptado a tus preferencias
+          personalizada. Puedes obtener recomendaciones de destinos, itinerarios y mucho más, todo adaptado a tus preferencias
           y
           gustos.
         </p>
@@ -28,7 +28,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <!-- Ejemplo 1 - Detalle de Viaje -->
           <div class="bg-gray-800 p-4 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold mb-2">Explora los Misterios de la Selva Amazónica</h3>
+            <h3 class="text-xl font-semibold mb-2">Explora los increíbles Misterios de la Selva Amazónica</h3>
             <p class="mb-2">Embárcate en una aventura en la selva amazónica peruana, con observación de la vida
               silvestre,
               paseos en canoa y exploración de la flora y fauna exótica.</p>
@@ -86,7 +86,7 @@
           <div class="bg-gray-800 p-4 rounded-lg shadow-md">
             <h3 class="text-xl font-semibold mb-2 text-gray-100">Chat de Asesoría de Aventuras en la Selva</h3>
             <p class="mb-2 text-gray-400">Habla con nuestros expertos en aventuras en la selva amazónica peruana. Obtén
-              consejos sobre rutas de senderismo, vida silvestre y más.</p>
+              consejos y guías sobre rutas de senderismo, vida silvestre y más.</p>
             <a href="/chat-aventuras" class="bg-red-500 hover:bg-blue-600 text-white py-2 px-4 rounded-full text-lg">Iniciar
               Chat</a>
           </div>
