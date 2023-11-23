@@ -39,21 +39,20 @@
       </div>
   
       <!-- Botón de Logout -->
-      <button @click="logout" class="mt-8 p-2 rounded-md text-white bg-button hover:bg-gray-800 transition duration-300 ease-in-out">Logout</button>
+      <button @click="signOut" class="mt-8 p-2 rounded-md text-white bg-button hover:bg-gray-800 transition duration-300 ease-in-out">
+        <a href="/">Cerrar sesión</a>
+      </button>
     </div>
   </template>
   
   <script setup>
+
+  const { signOut } = useAuth()
+
   const data = {
     hovered: false,
   };
-  
-  const methods = {
-    logout() {
-      // Lógica para cerrar sesión
-      console.log('Logout clicked');
-    },
-  };
+
   </script>
   
   <style scoped>

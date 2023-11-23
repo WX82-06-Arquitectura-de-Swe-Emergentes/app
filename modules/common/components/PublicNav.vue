@@ -1,5 +1,15 @@
+<script setup>
+import {Popover, PopoverButton, PopoverPanel} from '@headlessui/vue'
+import {Bars3Icon, XMarkIcon} from '@heroicons/vue/24/outline'
+
+const navigation = [
+  {name: 'Home', href: '/', current: true},
+  {name: 'Login', href: '/login', current: false},
+  {name: 'Register', href: '/register', current: false},
+]
+</script>
+
 <template>
-  <!-- When the mobile menu is open, add `overflow-hidden` to the `body` element to prevent double scrollbars -->
   <Popover as="template" v-slot="{ open }">
     <header
         :class="[open ? 'fixed inset-0 z-40 overflow-y-auto' : '', 'bg-primary shadow-sm lg:static lg:overflow-y-visible']">
@@ -7,9 +17,10 @@
         <div class="relative flex justify-between lg:gap-8 xl:grid xl:grid-cols-12">
           <div class="flex md:absolute md:inset-y-0 md:left-0 lg:static xl:col-span-2">
             <div class="flex flex-shrink-0 items-center">
-              <a href="/">
-                <img class="h-8 w-auto" src="../assets/images/logo.png"
+              <a href="/" class="flex items-center">
+                <img class="h-8 w-auto" src="~/assets/images/logo.png"
                      alt="Adventurehub"/>
+                AdventureHub
               </a>
             </div>
           </div>
@@ -40,7 +51,7 @@
                class="ml-6 inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
               Login
             </a>
-            <a href="/login"
+            <a href="/signup"
                class="ml-6 inline-flex items-center rounded-md border border-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
               Register
             </a>
@@ -59,18 +70,4 @@
       </PopoverPanel>
     </header>
   </Popover>
-  <main class="h-[calc(100vh-68px)] bg-background">
-    <slot></slot>
-  </main>
 </template>
-
-<script setup>
-import {Popover, PopoverButton, PopoverPanel} from '@headlessui/vue'
-import {Bars3Icon, XMarkIcon} from '@heroicons/vue/24/outline'
-
-const navigation = [
-  {name: 'Home', href: '/', current: true},
-  {name: 'Login', href: '/login', current: false},
-  {name: 'Register', href: '/register', current: false},
-]
-</script>
