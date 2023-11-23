@@ -17,7 +17,7 @@
               </div>
               <div class="w-1/2 px-5">
                 <label for="from" class="block text-sm font-medium text-white">Destino</label>
-                <input v-model="destiny" type="text" name="from" id="from" placeholder="Destino" class="p-2 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-rose-400 rounded-md bg-primary border text-white">
+                <input v-model="destination" type="text" name="from" id="from" placeholder="Destino" class="p-2 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-rose-400 rounded-md bg-primary border text-white">
                 <div class="h-5"></div>
                 <label for="from" class="block text-sm font-medium text-white">Fecha vuelta</label>
                 <input v-model="returnDate" type="date" name="from" id="from" placeholder="Elegir fecha" class="p-2 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-rose-400 rounded-md bg-primary border text-white">
@@ -28,7 +28,7 @@
               <div class="w-1/3 px-10">
                 <span class="text-sm">Adultos</span>
                 <select v-model="adults" name="adults" id="adults" class="p-2 mt-1 focus:ring-rose-400 focus:border-rose-400 block w-full shadow-sm sm:text-sm border-rose-400 rounded-md bg-primary border rounded-md">
-                  <option value="1">1</option>
+                  <option selected value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                   <option value="4">4</option>
@@ -41,6 +41,7 @@
               <div class="w-1/3 px-10">
                 <span class="text-sm">Niños</span>
                 <select v-model="children" name="adults" id="adults" class="p-2 mt-1 focus:ring-rose-400 focus:border-rose-400 block w-full shadow-sm sm:text-sm border-rose-400 rounded-md bg-primary border rounded-md">
+                  <option selected value="0">0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -54,6 +55,7 @@
               <div class="w-1/3 px-10">
                 <span class="text-sm">Bebes</span>
                 <select v-model="babies" name="adults" id="adults" class="p-2 mt-1 focus:ring-rose-400 focus:border-rose-400 block w-full shadow-sm sm:text-sm border-rose-400 rounded-md bg-primary border rounded-md">
+                  <option selected value="0">0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -67,8 +69,7 @@
             </div>
 
             <div class="px-20 mt-5">
-              <button type="submit" class="w-full bg-rose-400 text-white p-2 rounded-md">Buscar Vuelo</button>
-
+              <button :disabled="!isFormValid" class="w-full bg-rose-400 disabled:bg-gray-700 disabled:text-gray-400 text-white p-2 rounded-md">Buscar Vuelo</button>
             </div>
           </div>
         </form>
@@ -78,9 +79,11 @@
 </template>
 
 <script setup lang="ts">
+import { ref, watch, computed } from 'vue';
+import {navigateTo} from "#app";
 
 const origin = ref('');
-const destiny = ref('');
+const destination = ref('');
 
 const departureDate = ref('');
 const returnDate = ref('');
@@ -89,17 +92,33 @@ const adults = ref(0);
 const children = ref(0);
 const babies = ref(0);
 
+watch([origin, destination, departureDate, returnDate, adults, children, babies], () => {
+  validateForm();
+})
 
+const validateForm = () => {
+  if (!origin.value || !destination.value || !departureDate.value || !returnDate.value) {
+    return false;
+  }
+
+  const departureDateObj = new Date(departureDate.value);
+  const returnDateObj = new Date(returnDate.value);
+  const today = new Date();
+
+  return !(origin.value === destination.value || departureDateObj >= returnDateObj || departureDateObj <= today);
+}
+
+const isFormValid = computed(() => validateForm());
 const onSubmit = async () => {
-  console.log(
-    origin.value,
-    destiny.value,
-    departureDate.value,
-    returnDate.value,
-    adults.value,
-    children.value,
-    babies.value
-  )
+  // Perform form submission logic if the form is valid
+  if (isFormValid.value) {
+    // Your form submission logic here
+    navigateTo(
+      `/trips/search?origin=${origin.value}&destination=${destination.value}&departureDate=${departureDate.value}&returnDate=${returnDate.value}&adults=${adults.value}&children=${children.value}&babies=${babies.value}`
+    )
+  } else {
+    alert('Form is not valid. Please correct the errors.');
+  }
 };
 
 </script>

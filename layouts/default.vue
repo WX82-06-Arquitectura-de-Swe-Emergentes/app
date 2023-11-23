@@ -1,7 +1,7 @@
 <template>
   <Nav v-if="session"/>
   <PublicNav v-else/>
-  <main class="h-[calc(100vh-4rem)] bg-slate-100 dark:bg-background">
+  <main class="h-[calc(100vh-4rem)] bg-background">
     <slot></slot>
   </main>
 </template>
@@ -22,7 +22,7 @@ const navigation = [
 ]
 
 const publicRoutes = [
-  '/', '/login', '/register', '/trips'
+  '/', '/login', '/register', '/trips', '/trips/search'
 ]
 
 if (!session.value && !publicRoutes.includes(route.path))
