@@ -40,7 +40,7 @@ export default defineNuxtConfig({
     },
     runtimeConfig: {
         authJs: {
-            secret: process.env.NUXT_NEXTAUTH_SECRET
+            secret: process.env.NUXT_NEXTAUTH_SECRET ?? '0874453238ba5980e5e827aba4b764bcf1e86da6e46f10f6128017f45b817779'
         },
         public: {
             apiBaseUrl: process.env.API_BASE_URL ?? 'http://localhost:8080/api/v1',
