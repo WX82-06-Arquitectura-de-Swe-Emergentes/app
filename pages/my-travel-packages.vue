@@ -24,11 +24,7 @@ import PackageCard from '~/components/PackageCard.vue';
 
 
 const tours =ref([]);
-onMounted(() => {
-  // Llama a fetchTours cuando el componente se monta
-  console.log('Api fetcdf aasdsdsadfh')
-  fetchTours();
-});
+
 const fetchTours = async () =>{
   console.log('test')
   const {data,error} = await useFetch(`https://api.turismoi.com/api/tours?page%5Bpage%5D=1&page%5Bper_page%5D=10`, {
@@ -55,9 +51,16 @@ const fetchTours = async () =>{
 
 
 
+
 definePageMeta({
   layout: false,
 })
+
+onMounted(() => {
+  // Llama a fetchTours cuando el componente se monta
+  console.log('Api fetcdf aasdsdsadfh')
+  fetchTours();
+});
 
 const exampleTours = ref([
   {
