@@ -25,7 +25,7 @@ class HttpClient {
     });
   }
 
-  async put<T>(url: string, opts: any) {
+  async put<T>(url: string, opts = {}) {
     return await $fetch<T>(this.baseUrl + url, {
       method: "PUT",
     });
@@ -39,7 +39,7 @@ class HttpClient {
   }
 
   async delete<T>(url: string, opts = {}) {
-    const response = await $fetch<T>(this.baseUrl + url, {
+    return await $fetch<T>(this.baseUrl + url, {
       method: "DELETE",
       ...opts
     });
